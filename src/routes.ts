@@ -1,8 +1,8 @@
 import { Router } from 'express'
-import ScheduleController from './controllers/ScheduleController'
+import SchedulesController from './controllers/SchedulesController'
 
 const routes = Router()
 
-routes.get('/', ScheduleController.index)
+routes.get('/', SchedulesController.index)
 
 export default routes
