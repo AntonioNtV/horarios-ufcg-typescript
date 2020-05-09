@@ -11,6 +11,7 @@ type Schedule = Document & {
     oldPPCperiod: string;
     day: string;
     hour:string
+    completeSchedule(): object
 }
 
 const ScheduleSchema = new Schema(
@@ -87,5 +88,22 @@ const ScheduleSchema = new Schema(
     }
   }
 )
+
+ScheduleSchema.methods.completeSchedule = function (): object {
+  return {
+    name: this.name,
+    classrom: this.classrom,
+    discipline: this.discipline,
+    class: this.class,
+    teacher: this.teacher,
+    category: this.category,
+    newPPCperiod: this.newPPCperiod,
+    oldPPCperiod: this.oldPPCperiod,
+    schedule: {
+      day: this.day,
+      hour: this.hour
+    }
+  }
+}
 
 export default mongoose.model<Schedule>('Schedule', ScheduleSchema)
