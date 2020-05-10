@@ -1,7 +1,7 @@
 
 class ImportScheduleService {
-  async run (): Promise<void> {
-    console.log('Building')
+  async run (file: string): Promise<void> {
+    console.log(file)
   }
 }
 
