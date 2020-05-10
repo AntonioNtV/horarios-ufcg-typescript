@@ -29,11 +29,11 @@ class App {
       this.express.use(routes)
     }
 
-    private async initialization (): Promise<void> {
-      await ImportScheduleService.run('data.csv')
-      this.middleware()
+    private initialization (): void {
       this.database()
+      this.middleware()
       this.routes()
+      ImportScheduleService.run()
     }
 }
 

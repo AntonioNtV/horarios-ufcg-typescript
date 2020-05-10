@@ -1,7 +1,10 @@
-
 class ImportScheduleService {
-  async run (file: string): Promise<void> {
-    console.log(file)
+  public run (): void {
+    console.log('run')
+  }
+
+  private exportToMongo (): void {
+    console.log('export to mongo')
   }
 }
 
