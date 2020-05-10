@@ -23,7 +23,7 @@ describe('Import', () => {
     })
   })
 
-  it('should run a python script and import the data that will be generated', async () => {
+  it('should import schedule', async () => {
     expect(1 + 1).toBe(2)
   })
 })
