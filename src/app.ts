@@ -10,10 +10,7 @@ class App {
     public constructor () {
       this.express = express()
 
-      ImportScheduleService.run()
-      this.middleware()
-      this.database()
-      this.routes()
+      this.initialization()
     }
 
     private middleware ():void {
@@ -30,6 +27,13 @@ class App {
 
     private routes (): void {
       this.express.use(routes)
+    }
+
+    private async initialization (): Promise<void> {
+      await ImportScheduleService.run()
+      this.middleware()
+      this.database()
+      this.routes()
     }
 }
 
