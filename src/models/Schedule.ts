@@ -2,7 +2,7 @@ import mongoose, { Document, Schema } from 'mongoose'
 
 type Schedule = Document & {
     name: string;
-    classrom: string;
+    classroom: string;
     discipline: string;
     class: string;
     teacher: string;
@@ -23,7 +23,7 @@ const ScheduleSchema = new Schema(
       unique: true,
       required: true
     },
-    classrom: {
+    classroom: {
       type: String,
       lowercase: true,
       trim: true,
@@ -92,7 +92,7 @@ const ScheduleSchema = new Schema(
 ScheduleSchema.methods.completeSchedule = function (): object {
   return {
     name: this.name,
-    classrom: this.classrom,
+    classroom: this.classrom,
     discipline: this.discipline,
     class: this.class,
     teacher: this.teacher,
