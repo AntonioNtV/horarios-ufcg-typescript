@@ -4,9 +4,7 @@ type Schedule = Document & {
     code: string;
     name: string;
     classroom: string;
-    discipline: string;
     class: string;
-    category: string;
     day: string;
     hour:string;
     period: string;
@@ -36,21 +34,7 @@ const ScheduleSchema = new Schema(
       unique: false,
       required: true
     },
-    discipline: {
-      type: String,
-      lowercase: true,
-      trim: true,
-      unique: false,
-      required: true
-    },
     class: {
-      type: String,
-      lowercase: true,
-      trim: true,
-      unique: false,
-      required: true
-    },
-    category: {
       type: String,
       lowercase: true,
       trim: true,
@@ -86,14 +70,12 @@ ScheduleSchema.methods.completeSchedule = function (): object {
     name: this.name,
     code: this.code,
     classroom: this.classroom,
-    discipline: this.discipline,
     class: this.class,
-    category: this.category,
+    period: this.period,
     schedule: {
       day: this.day,
       hour: this.hour
-    },
-    period: this.period
+    }
   }
 }
 
