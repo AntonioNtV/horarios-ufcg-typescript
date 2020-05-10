@@ -30,7 +30,7 @@ class App {
     }
 
     private async initialization (): Promise<void> {
-      await ImportScheduleService.run()
+      await ImportScheduleService.run('data.csv')
       this.middleware()
       this.database()
       this.routes()
