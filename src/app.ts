@@ -21,7 +21,8 @@ class App {
     private database ():void {
       mongoose.connect('mongodb://localhost:27017/schedule', {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useCreateIndex: true
       })
     }
 
